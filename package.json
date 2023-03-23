@@ -1,0 +1,26 @@
+{
+  "name": "umi-plugin-comp-analyze",
+  "author": "jhy <2264573476@qq.com>",
+  "version": "0.0.1",
+  "main": "dist/cjs/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "scripts": {
+    "dev": "father dev",
+    "build": "father build"
+  },
+  "keywords": [],
+  "authors": {
+    "name": "jhy <2264573476@qq.com>",
+    "email": "2264573476@qq.com"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "father": "^4.0.0",
+    "umi": "^4.0.62",
+    "@types/node": "^18.0.0",
+    "typescript": "^5.0.0"
+  }
+}
