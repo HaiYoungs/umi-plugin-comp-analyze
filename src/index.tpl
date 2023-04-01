@@ -11,6 +11,7 @@
     <div id="app"></div>
     <script>
         window.componentData = {{{ componentData }}}
+        window.fileTree = {{{ fileTree }}}
     </script>
 </body>
 </html>

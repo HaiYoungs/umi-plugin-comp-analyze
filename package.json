@@ -22,11 +22,14 @@
     "json-stringify-safe": "^5.0.1",
     "mkdirp": "^2.1.6",
     "mustache": "^4.2.0",
+    "tree-cli": "^0.6.7",
+    "tree-node-cli": "^1.6.0",
     "typescript": "^5.0.0",
     "umi": "^3.5.38",
     "umi-webpack-bundle-analyzer": "^4.4.2"
   },
   "dependencies": {
-    "koa": "^2.14.1"
+    "koa": "^2.14.1",
+    "koa-static": "^5.0.0"
   }
 }

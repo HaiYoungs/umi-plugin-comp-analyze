@@ -1,4 +1,6 @@
 const Koa = require('koa');
+const path = require('path');
+const staticFiles = require('koa-static');
 
 interface IServer {
     port: number;
@@ -26,6 +28,8 @@ class Server {
     }
 
     start () {
+        this.app.use(staticFiles(path.join(__dirname, '../public/')))
+        
         this.app.use((ctx: any) => {
             if (ctx.request.method === 'GET' && ctx.request.path === '/') {
                 ctx.set('Content-Type', 'text/html');
@@ -39,3 +43,5 @@ class Server {
 }
 
 module.exports = Server;
+
+export {}

@@ -5,7 +5,8 @@ const stringify = require('json-stringify-safe')
 
 const appServer = require('./Server')
 const { readStatsPolling, getEffectiveModules } = require('./getModuleMap');
-const { absStatsFilePath } = require('./constant');
+const { getFileTree } = require('./getFileTree');
+const { absStatsFilePath, absSrcPath } = require('./constant');
 
 interface IRenderHtml {
     /**文档标题 */
@@ -13,7 +14,9 @@ interface IRenderHtml {
     /**运行时 js 文件名 */
     bundleFileName: string;
     /**组件依赖数据 */
-    componentData: any[]
+    componentData: any[];
+    /**文件树结构 */
+    fileTree: any[];
 }
 
 /**
@@ -38,13 +41,14 @@ class Viewer {
 
         // 获取有效 module 信息
         const modules = getEffectiveModules(this.stats);
-        console.log(modules)
+        const fileTree = getFileTree(absSrcPath);
 
         // 生成 html 页面
         const html = this.renderHtml({
             title: '组件依赖分析',
             bundleFileName: 'viewer.js',
-            componentData: modules
+            componentData: modules,
+            fileTree
         });
 
         // 开启服务
@@ -52,12 +56,13 @@ class Viewer {
         app.start();
     }
 
-    renderHtml({ title, bundleFileName, componentData }: IRenderHtml) {
+    renderHtml({ title, bundleFileName, componentData, fileTree }: IRenderHtml) {
         const htmlTpl = readFileSync(join(__dirname, 'index.tpl'), 'utf8');
         return Mustache.render(htmlTpl, {
             title,
             bundleFileName,
-            componentData: escapeJson(componentData)
+            componentData: escapeJson(componentData),
+            fileTree: escapeJson(fileTree)
         })
     }
 }

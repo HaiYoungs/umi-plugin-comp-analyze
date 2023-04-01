@@ -1,9 +1,7 @@
 import { IApi } from 'umi';
-const { BundleAnalyzerPlugin } = require('umi-webpack-bundle-analyzer') 
+// const { BundleAnalyzerPlugin } = require('umi-webpack-bundle-analyzer') 
 
-// const { getFilteredModules } = require('./dataTransform');
 const Viewer = require('./Viewer');
-const { absStatsFilePath } = require('./constant');
 
 export default (api: IApi) => {
   api.describe({
