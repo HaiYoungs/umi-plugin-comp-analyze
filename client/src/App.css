@@ -1,0 +1,10 @@
+@import '~antd/dist/antd.css';
+
+.App {
+    display: flex;
+    padding: 20px;
+}
+
+.tree {
+    min-width: 250px;
+}

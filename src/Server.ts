@@ -28,7 +28,7 @@ class Server {
     }
 
     start () {
-        this.app.use(staticFiles(path.join(__dirname, '../public/')))
+        this.app.use(staticFiles(path.join(__dirname, '../../public/')))
         
         this.app.use((ctx: any) => {
             if (ctx.request.method === 'GET' && ctx.request.path === '/') {
