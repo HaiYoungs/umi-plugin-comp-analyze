@@ -29,6 +29,7 @@ umi ac
 ```
 
 Example Image
+![avatar](https://github.com/HaiYoungs/umi-plugin-comp-analyze/blob/feat-0.0.1/assets/example.png)
 
 ## Options
 
