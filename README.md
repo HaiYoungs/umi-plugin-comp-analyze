@@ -20,6 +20,16 @@ export default {
 }
 ```
 
+Start Analyze Server
+
+```js
+umi analyzeComp
+or
+umi ac
+```
+
+Example Image
+
 ## Options
 
 TODO
