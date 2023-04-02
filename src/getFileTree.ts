@@ -10,7 +10,7 @@ function getFileTree(dir: string) {
 
   if (files.length === 0) return console.log(`${dir} 目录为空`);
 
-  const filteredExcludeFiles = files.filter((v: string) => isExcludeDir(v));
+  const filteredExcludeFiles = files.filter((v: string) => !isExcludeDir(v));
 
   return filteredExcludeFiles.map((item: string) => {
     const filePath = path.join(dir, item);
@@ -41,7 +41,7 @@ function isDir(dir: string) {
 
 // 过滤 .umi 等临时文件
 function isExcludeDir (dirname: string) {
-  return dirname.includes('.');
+  return dirname === '.umi' || dirname === '.umi-production';
 }
 
 // 读取路径下的文件、文件夹

@@ -1,10 +1,9 @@
 import { nodeStyle, edgeStyle } from "./config";
 
 export function getGraphData (componentData) {
-    console.log(componentData)
     const nodes = componentData.map(item => ({
         id: item.id,
-        label: item.id,
+        label: item.name,
         description: item.id,
         ...nodeStyle
     }));
